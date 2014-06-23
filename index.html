@@ -1,0 +1,16 @@
+<html ng-app="MyApp">
+<head>
+	<script type='text/javascript' src="angular.min.js"></script>
+	<script type='text/javascript' src="main.js"></script>
+	<script type='text/javascript' src='http://cdn.firebase.com/v0/firebase-debug.js'></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+	<script type='text/javascript' src='OfflineFirebase.js'></script>
+</head>
+<body ng-controller="MyCtrl">
+	<ul>
+		<li ng-click="remove(id)" ng-repeat="(id, item) in items">{{ item.title }}</li>
+	</ul>
+	<button ng-click="add()"></button>
+</body>
+</html>
