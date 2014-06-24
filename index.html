@@ -1,16 +1,20 @@
 <html ng-app="MyApp">
 <head>
-	<script type='text/javascript' src="angular.min.js"></script>
-	<script type='text/javascript' src="main.js"></script>
+	<script type='text/javascript' src='angular.min.js'></script>
 	<script type='text/javascript' src='http://cdn.firebase.com/v0/firebase-debug.js'></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 	<script type='text/javascript' src='OfflineFirebase.js'></script>
+	<script type='text/javascript' src='moment.js'></script>
+	<script type='text/javascript' src='angular-translate.min.js'></script>
+	<script type='text/javascript' src="main.js"></script>
+	<script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body ng-controller="MyCtrl">
+	{{ 'DATETIME_FORMAT' | translate}}
 	<ul>
-		<li ng-click="remove(id)" ng-repeat="(id, item) in items">{{ item.title }}</li>
+		<li ng-click="remove(id)" ng-show="DATES.datetime" ng-repeat="(id, item) in items">{{item.date | date: DATES.datetime}}</li>
 	</ul>
-	<button ng-click="add()"></button>
+	<button ng-click="add()">add</button>
 </body>
 </html>
